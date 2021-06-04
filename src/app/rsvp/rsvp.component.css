@@ -55,6 +55,7 @@ input:focus {
 }
 
 input#check {
+    display: none;
     position: absolute;
     opacity: 0;
 }
