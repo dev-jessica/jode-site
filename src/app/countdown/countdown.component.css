@@ -1,13 +1,20 @@
         .container {
             display: flex;
             justify-content: center;
+            flex-wrap: wrap;
+            margin: 20px auto;
             font-family: 'josefin sans';
             width: 90%;
             margin: auto;
         }
         
+        .container h2 {
+            width: 100%;
+            text-align: center;
+        }
+        
         .countdown {
-            margin-bottom: 50px;
+            margin-top: 20px;
         }
         
         .countdown div {
