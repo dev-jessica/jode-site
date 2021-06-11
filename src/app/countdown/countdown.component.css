@@ -2,7 +2,7 @@
             display: flex;
             justify-content: center;
             flex-wrap: wrap;
-            margin: 20px auto;
+            margin: 40px auto;
             font-family: 'josefin sans';
             width: 90%;
             margin: auto;
@@ -39,3 +39,13 @@
             text-transform: uppercase;
             text-align: left;
         }
+
+
+        @media screen and (max-width: 470px){
+        .countdown div {
+            font-size: 3em
+        }
+        .countdown div span{
+            font-size: 0.9rem
+        }
+    }
