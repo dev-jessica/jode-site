@@ -2,7 +2,7 @@ section .primary-image{
     background: url('https://fakeimg.pl/1280x720/c4aa99/eae0d0/');
     background-repeat: no-repeat;
     /* background-attachment: fixed; */
-    background-position: center;
+    background-position: 0% 55%;
     width:100%;
     height: 400px;
 }
@@ -38,7 +38,7 @@ section .primary-image{
 
 .grid-container {
     display: grid;
-    height: 750px;
+    height: 880px;
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
     grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
     gap: 10px 10px;
