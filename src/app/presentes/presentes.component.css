@@ -1,0 +1,80 @@
+.container{
+    font-family: 'josefin sans';
+    padding: 30px;    
+}
+
+.categorias{
+    display: flex;
+    align-items: center;
+    overflow-x: auto;    
+    width:100%;
+}
+
+.categorias button{
+    font-size: 16px;
+    font-family: 'josefin sans';
+    border: 1px solid black;
+    padding: 6px 15px;
+    background-color: white;
+    border-radius: 15px;
+    margin: 10px;
+    transition: all 0.4s;
+    cursor: pointer;
+
+
+}
+
+.categorias button:hover{
+    font-weight: bold;
+    font-style: italic;
+    letter-spacing: 3px;
+}
+
+.categorias .line{
+    height: 25px;
+    width: 2px;
+    margin: 10px;
+    background-color: black;
+}
+
+.produtos{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.produtos .produto{
+    width: 250px;
+    padding: 15px;
+    border: 1px solid black;
+}
+
+.produtos .produto img{
+    width: 250px;
+    height: 250px;
+}
+
+.produtos .produto .info{
+    margin-top: 5px;
+    height: 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+}
+
+.info h2{
+    font-size: 16px;
+    line-height: 14px;
+} 
+
+.info p{
+    font-size: 16px;
+    white-space: nowrap;
+}
+
+.produtos .produto h3{
+    font-size: 14px;
+    color: #574e47;
+}

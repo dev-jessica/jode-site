@@ -8,7 +8,7 @@ import { Presenca, PresencaRequest } from '../models/Presenca.model';
 })
 export class PresencaService {
 
-  apiUrl = 'https://302f608a3785.ngrok.io'
+  apiUrl = 'https://0ab8ce0ae9f1.ngrok.io'
 
   constructor(private http: HttpClient) { }
 

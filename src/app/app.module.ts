@@ -11,6 +11,8 @@ import { RsvpComponent } from './rsvp/rsvp.component';
 import { CountdownComponent } from './countdown/countdown.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { PresencaService } from './services/presenca.service';
+import { PresentesComponent } from './presentes/presentes.component';
+import { CategoriaService } from './services/categoria.service';
 
 @NgModule({
   declarations: [
@@ -19,7 +21,8 @@ import { PresencaService } from './services/presenca.service';
     InicioComponent,
     HistoriaComponent,
     RsvpComponent,
-    CountdownComponent
+    CountdownComponent,
+    PresentesComponent
   ],
   imports: [
     BrowserModule,
@@ -29,7 +32,9 @@ import { PresencaService } from './services/presenca.service';
     HttpClientModule
   ],
   providers: [
-    PresencaService
+    PresencaService,
+    CategoriaService,
+    PresentesComponent
   ],
   bootstrap: [AppComponent]
 })

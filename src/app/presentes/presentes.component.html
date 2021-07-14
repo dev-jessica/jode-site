@@ -1,0 +1,22 @@
+<div class="container">
+    <div class="categorias">
+        <button (click)="getAllPresentes()">Todos</button>
+        <div class="line"></div>
+        <button *ngFor="let categoria of categorias" (click)="getPresentesbyCategoria(categoria.id)">{{categoria.titulo}}</button>
+
+    </div>
+    <div class="produtos">
+        <div class="produto" *ngFor="let produto of produtos">
+            <img [src]="produto.imagem" [alt]="produto.nome">
+           
+            <div class="info">
+            <h2>{{produto.nome}}</h2>
+            <p>R$ {{produto.preco}}</p>
+
+           </div>
+            <h3>{{produto.categoria.titulo}}
+            </h3>
+            <div></div>
+        </div>
+    </div>
+</div>
