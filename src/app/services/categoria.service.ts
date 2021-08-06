@@ -9,7 +9,7 @@ import { Categoria } from '../models/categoria.model';
 export class CategoriaService {
 
 
-  apiUrl = 'https://0ab8ce0ae9f1.ngrok.io'
+  apiUrl = 'https://48f20b87c3e3.ngrok.io'
 
 
   constructor(private http: HttpClient) { }

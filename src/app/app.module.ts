@@ -13,6 +13,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { PresencaService } from './services/presenca.service';
 import { PresentesComponent } from './presentes/presentes.component';
 import { CategoriaService } from './services/categoria.service';
+import { ModalComponent } from './modal/modal.component';
+import { ModalService } from './services/modal.service';
 
 @NgModule({
   declarations: [
@@ -22,7 +24,8 @@ import { CategoriaService } from './services/categoria.service';
     HistoriaComponent,
     RsvpComponent,
     CountdownComponent,
-    PresentesComponent
+    PresentesComponent,
+    ModalComponent
   ],
   imports: [
     BrowserModule,
@@ -34,7 +37,9 @@ import { CategoriaService } from './services/categoria.service';
   providers: [
     PresencaService,
     CategoriaService,
-    PresentesComponent
+    PresentesComponent,
+    ModalService,
+  
   ],
   bootstrap: [AppComponent]
 })

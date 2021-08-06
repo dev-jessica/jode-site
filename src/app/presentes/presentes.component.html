@@ -1,22 +1,45 @@
 <div class="container">
     <div class="categorias">
-        <button (click)="getAllPresentes()">Todos</button>
+        <button (click)="getAllPresentes()" [ngClass]="{'active': !categoriaSelecionada}">Todos</button>
         <div class="line"></div>
-        <button *ngFor="let categoria of categorias" (click)="getPresentesbyCategoria(categoria.id)">{{categoria.titulo}}</button>
-
+        <button *ngFor="let categoria of categorias" (click)="getPresentesbyCategoria(categoria.id)"
+            [ngClass]="{'active': categoria.id === categoriaSelecionada}">{{categoria.titulo}}</button>
     </div>
     <div class="produtos">
         <div class="produto" *ngFor="let produto of produtos">
             <img [src]="produto.imagem" [alt]="produto.nome">
-           
-            <div class="info">
-            <h2>{{produto.nome}}</h2>
-            <p>R$ {{produto.preco}}</p>
 
-           </div>
-            <h3>{{produto.categoria.titulo}}
-            </h3>
-            <div></div>
+            <div class="info">
+                <h2>{{produto.nome}}</h2>
+                <p>R$ {{produto.preco}}</p>
+            </div>
+            <h3>{{produto.categoria.titulo}} </h3>
+            <app-modal [id]="'select-buy-option-' + produto.id">
+                <div class="buy-process" *ngIf="!comprarNoSite;else sendshop">
+                    <h2>Selecione opção de compra</h2>
+                    <button (click)="cliqueComprarNoSite()">Comprar por aqui</button>
+                    <a [href]="produto.link" (click)="closeModal('select-buy-option-'+ produto.id)"
+                        target="_blank">Comprar no site da loja</a>
+                </div>
+                <ng-template #sendshop>
+                    <div class="buy-process">
+                        <h2>Dados pagamento</h2>
+                        <input type="text" id="nome" placeholder="Nome" required />
+                        <input type="text" id="email" placeholder="Email" required />
+                        <input type="text" id="celular" placeholder="Celular" required />
+                        <h3>Total: R$ {{produto.preco}}</h3>
+                        <select name="parcelas" id="" required>
+                            <option value="">Parcelas</option>
+                            <option value="1">1x R$ {{produto.preco.toFixed(2)}}</option>
+                            <option value="2">2x R$ {{(produto.preco /2).toFixed(2)}}</option>
+                            <option value="3">3x R$ {{(produto.preco /3).toFixed(2)}}</option>
+                        </select>
+                        <button>Comprar</button>
+                    </div>
+                </ng-template>              
+            </app-modal>
+            <div class="buy-btn" (click)="openModal('select-buy-option-'+ produto.id)">
+            </div>
         </div>
     </div>
 </div>
