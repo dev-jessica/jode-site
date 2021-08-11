@@ -15,6 +15,7 @@ import { PresentesComponent } from './presentes/presentes.component';
 import { CategoriaService } from './services/categoria.service';
 import { ModalComponent } from './modal/modal.component';
 import { ModalService } from './services/modal.service';
+import { LoadingComponent } from './loading/loading.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { ModalService } from './services/modal.service';
     RsvpComponent,
     CountdownComponent,
     PresentesComponent,
-    ModalComponent
+    ModalComponent,
+    LoadingComponent
   ],
   imports: [
     BrowserModule,

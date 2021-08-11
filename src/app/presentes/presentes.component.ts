@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Categoria } from '../models/categoria.model';
 import { Presente } from '../models/presente.model';
 import { CategoriaService } from '../services/categoria.service';
@@ -15,7 +16,15 @@ export class PresentesComponent implements OnInit {
   categorias: Categoria[] = [];
   produtos: Presente[] = [];
   categoriaSelecionada: number;
-  comprarNoSite: boolean = false;
+  estadoModal: string = "opcoes";
+
+  formCompra = new FormGroup({
+    nome: new FormControl('',[Validators.required]),
+    email: new FormControl('',[Validators.required, Validators.email]),
+    celular: new FormControl('',[Validators.required]),
+    parcelas: new FormControl('',[Validators.required]),
+    quantidade: new FormControl('',[Validators.required]),
+  });
 
   constructor(private categoriaService: CategoriaService, 
     private presenteService: PresenteService, 
@@ -49,8 +58,8 @@ export class PresentesComponent implements OnInit {
 
   }
 
-  cliqueComprarNoSite(){
-    this.comprarNoSite = true;
+  mudarEstadoModal(novoEstado){
+    this.estadoModal = "novoEstado";
   }
 
   openModal(id: string) {
@@ -59,6 +68,12 @@ export class PresentesComponent implements OnInit {
 
   closeModal(id: string) {
     this.modalService.close(id);
+    this.estadoModal = "opcoes";
+    this.formCompra.reset();
+    this.formCompra.controls.quantidade.setValue('');
+    this.formCompra.controls.parcelas.setValue('');
+
+
   }
 
 }

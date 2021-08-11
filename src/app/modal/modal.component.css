@@ -18,12 +18,13 @@ app-modal .app-modal {
 app-modal .app-modal .app-modal-body {
     padding: 20px;
     background: #fff;
-    width: 50%;
+    width: 40%;
     max-height: 80vh;
     overflow-y: auto;
     margin-left: 50%;
     transform: translate(-50%, -50%);
     margin-top: 50vh;
+    position: relative;
    }
 
 app-modal .app-modal-background {  

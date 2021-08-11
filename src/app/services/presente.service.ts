@@ -8,7 +8,7 @@ import { Presente } from '../models/presente.model';
 })
 export class PresenteService {
 
-  apiUrl = 'https://48f20b87c3e3.ngrok.io'
+  apiUrl = 'https://539e3dee1454.ngrok.io'
 
 
   constructor(private http: HttpClient) { }
